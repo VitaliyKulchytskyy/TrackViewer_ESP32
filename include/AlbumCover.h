@@ -12,6 +12,9 @@
 
 class AlbumCover {
 public:
+    AlbumCover() = default;
+
+public:
     /**
      * Draw the jpeg-format image at the X-pos and Y-pos
      * @param x X-pos of the image
@@ -24,7 +27,13 @@ public:
      * @param url URL on an image
      * @param height Height of the image (only for images from YTPlayer)
      */
-    void setJpegImage(String& url);
+    void setJpegUrlOnImage(String& url);
+
+    /**
+     * Get the URL with the image
+     * @return URL on image
+     */
+    String getJpegUrlOnImage() const;
 
     /**
      * Get the height of the image
@@ -75,7 +84,7 @@ public:
     static void download(String& url);
 
 private:
-    String m_albumUrl;
+    String m_albumUrl = "";
     int m_imageHeight{};
     int m_imageWidth{};
 };

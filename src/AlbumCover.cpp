@@ -5,9 +5,13 @@ void AlbumCover::drawJpegImage(int x, int y) {
     drawSdJpeg(COVER_FILENAME, x, y);
 }
 
-void AlbumCover::setJpegImage(String& url) {
-    m_albumUrl = url;
+void AlbumCover::setJpegUrlOnImage(String& url) {
+    this->m_albumUrl = url;
     this->setupImageProperties(COVER_FILENAME);
+}
+
+String AlbumCover::getJpegUrlOnImage() const {
+    return this->m_albumUrl;
 }
 
 int AlbumCover::getImageHeight() const {

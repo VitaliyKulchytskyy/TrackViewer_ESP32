@@ -15,12 +15,16 @@ void View::printTrackData(ViewCallback &callback) {
     if(callback.isNewMessage()) {
         String message = callback.getMessage();
         Track* trackData = Track::fromJson(message);
+        String thisAlbumUrl = trackData->AlbumCoverImg->getJpegUrlOnImage();
 
-        const uint16_t center = (tft.width() >> 1) - (trackData->albumUrl->getImageWidth() >> 1);
-        trackData->albumUrl->drawJpegImage(center, 30);
+        if(prevAlbumUrl != thisAlbumUrl) {
+            const uint16_t center = (tft.width() >> 1) - (trackData->AlbumCoverImg->getImageWidth() >> 1);
+            trackData->AlbumCoverImg->drawJpegImage(center, 30);
+        }
+        prevAlbumUrl = thisAlbumUrl;
 
-        lbSongName.setLabelText(trackData->trackName);
-        lbArtistName.setLabelText(trackData->artistName);
+        lbSongName.setLabelText(trackData->TrackName);
+        lbArtistName.setLabelText(trackData->ArtistName);
 
         delete trackData;
     }

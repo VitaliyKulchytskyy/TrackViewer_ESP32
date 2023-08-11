@@ -8,7 +8,7 @@ Track* Track::fromJson(const String& jsonString) {
         auto pAlbumCover = new AlbumCover();
         String albumUrl = parsedRequest["thumb_url"];
         String albumUrlNewHeight = changeUrlImgHeight(albumUrl, 220);
-        pAlbumCover->setJpegImage(albumUrlNewHeight);
+        pAlbumCover->setJpegUrlOnImage(albumUrlNewHeight);
 
         return new Track{parsedRequest["artist"],
                          parsedRequest["track_name"],
@@ -27,3 +27,4 @@ String Track::changeUrlImgHeight(String url, int height = 60) {
     output.replace("60", std::to_string(height).c_str());
     return output;
 }
+

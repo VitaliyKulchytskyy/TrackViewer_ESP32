@@ -33,5 +33,7 @@ namespace {
     TFT_eSprite spHeader = TFT_eSprite(&tft);
     Label lbHeader;
     MessageSprite spLbHeader(&spHeader, &lbHeader);
-    ScrollHandler scHeader(&spLbHeader);;
+    ScrollHandler scHeader(&spLbHeader);
+
+    String prevAlbumUrl = "";
 }

@@ -6,7 +6,7 @@
 struct Track {
 public:
     ~Track() {
-        delete albumUrl;
+        delete AlbumCoverImg;
     }
 
 public:
@@ -28,8 +28,8 @@ private:
     static String changeUrlImgHeight(String url, int height);
 
 public:
-    String artistName;
-    String trackName;
-    String albumName;
-    AlbumCover* albumUrl;
+    String ArtistName;
+    String TrackName;
+    String AlbumName;
+    AlbumCover* AlbumCoverImg;
 };
