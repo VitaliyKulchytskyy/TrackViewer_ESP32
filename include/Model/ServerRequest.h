@@ -45,11 +45,14 @@ private:
         return temp;
     }
 
+    /**
+     * Greeting message. Displays at the beginning
+     */
     void sendGreeting() {
         this->m_request = R"({"artist": "By Karlenko",
                               "track_name": "To see the current track on the YTMusic type 'trackViewer.exe -r' in a terminal",
                               "album_name": "Greeting",
-                              "thumb_url": "https://srv2.imgonline.com.ua/result_img/imgonline-com-ua-Resize-n1D0sHeBaGK.jpg"})";
+                              "thumb_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/YouTubeMusic_Logo.png/170px-YouTubeMusic_Logo.jpg"})";
     }
 
 private:

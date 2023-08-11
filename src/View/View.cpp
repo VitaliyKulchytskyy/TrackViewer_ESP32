@@ -18,8 +18,9 @@ void View::printTrackData(ViewCallback &callback) {
         String thisAlbumUrl = trackData->AlbumCoverImg->getJpegUrlOnImage();
 
         if(prevAlbumUrl != thisAlbumUrl) {
-            const uint16_t center = (tft.width() >> 1) - (trackData->AlbumCoverImg->getImageWidth() >> 1);
-            trackData->AlbumCoverImg->drawJpegImage(center, 30);
+            const uint16_t centerH = (tft.width() >> 1) - (trackData->AlbumCoverImg->getImageWidth() >> 1);
+            const uint16_t centerV = ((tft.height() - 74) >> 1) - (trackData->AlbumCoverImg->getImageHeight() >> 1) + 17;
+            trackData->AlbumCoverImg->drawJpegImage(centerH, centerV);
         }
         prevAlbumUrl = thisAlbumUrl;
 

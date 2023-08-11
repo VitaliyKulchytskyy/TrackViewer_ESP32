@@ -117,7 +117,6 @@ File* AlbumCover::getImageFile(const char *filename) {
 
 void AlbumCover::download(String& url) {
     File file = SD.open(COVER_FILENAME, FILE_WRITE);
-
     HTTPClient urlDownloadHandler;
     urlDownloadHandler.begin(url);
     int httpCode = urlDownloadHandler.GET();
@@ -126,13 +125,13 @@ void AlbumCover::download(String& url) {
     size_t downloaded_data_size = 0;
     const size_t imageSize = urlDownloadHandler.getSize();
     while (downloaded_data_size < imageSize) {
-        size_t available_data_size = stream->available();
-        if (available_data_size > 0) {
-            auto audio_data = (uint8_t*)malloc(available_data_size);
-            stream->readBytes(audio_data, available_data_size);
-            file.write(audio_data, available_data_size);
-            downloaded_data_size += available_data_size;
-            free(audio_data);
+        size_t availableDataSize = stream->available();
+        if (availableDataSize > 0) {
+            auto imageData = (uint8_t*)malloc(availableDataSize);
+            stream->readBytes(imageData, availableDataSize);
+            file.write(imageData, availableDataSize);
+            downloaded_data_size += availableDataSize;
+            free(imageData);
         }
     }
 
