@@ -10,12 +10,19 @@ public:
 public:
 
     bool isChanged() override {
+/*        if(m_isFirstInvoke) {
+            sendGreeting();
+            this->m_isFirstInvoke = false;
+            return true;
+        }*/
+
         WiFiClient client = wifiServer.available();
 
         if (client) {
             while (client.connected())
-                while (client.available() > 0)
+                while (client.available() > 0) {
                     this->m_request += (char) client.read();
+                }
 
             return true;
         }
@@ -38,6 +45,11 @@ private:
         return temp;
     }
 
+/*    void sendGreeting() {
+        this->m_request = R"({"artist": "By Karlenko", "track_name": "To see the current track on the YTMusic type 'trackViewer.exe -r' in a terminal", "album_name": "Greeting", "thumb_url": "https://a.silvergames.com/j/b/nyan-cat.jpg"})";
+    }*/
+
 private:
     String m_request = "";
+//    bool m_isFirstInvoke = true;
 };

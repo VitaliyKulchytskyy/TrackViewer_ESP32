@@ -53,7 +53,7 @@ void setupSprites() {
     scSongName.setMessageScrollDelay(40)
             .setSpaceBetweenRepeats(90);
 
-    lbSongName.setLabelText("To see the current track on the YTMusic type \"trackViewer.exe -r\" in a terminal");
+//    lbSongName.setLabelText("To see the current track on the YTMusic type \"trackViewer.exe -r\" in a terminal");
 
     /* ----- [An artist name settings] ----- */
     spArtistName.setFreeFont(&FreeSansBold9pt7b);
@@ -66,7 +66,7 @@ void setupSprites() {
     scArtistName.setMessageScrollDelay(50)
                 .setSpaceBetweenRepeats(90);
 
-    lbArtistName.setLabelText("By Karlenko");
+//    lbArtistName.setLabelText("By Karlenko");
 
     /* ----- [The header label settings] ----- */
     spHeader.setFreeFont();

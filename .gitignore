@@ -1,5 +1,6 @@
-.pio
-CMakeListsPrivate.txt
-cmake-build-*/
-.idea
-include/utils/Password.h
+/CMakeListsPrivate.txt
+/cmake-build-pico32/
+/cmake-build-debug/
+/.pio/
+/.idea/
+/include/utils/Password.h

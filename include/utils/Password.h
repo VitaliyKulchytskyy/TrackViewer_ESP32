@@ -2,6 +2,6 @@
 
 
 namespace Password {
-    static const char* ssid = "your__ssid";
-    static const char* password = "your__password";
+    static const char* ssid = "SAS";
+    static const char* password = "babenko39";
 }
