@@ -10,11 +10,11 @@ public:
 public:
 
     bool isChanged() override {
-/*        if(m_isFirstInvoke) {
+        if(m_isFirstInvoke) {
             sendGreeting();
             this->m_isFirstInvoke = false;
             return true;
-        }*/
+        }
 
         WiFiClient client = wifiServer.available();
 
@@ -45,11 +45,14 @@ private:
         return temp;
     }
 
-/*    void sendGreeting() {
-        this->m_request = R"({"artist": "By Karlenko", "track_name": "To see the current track on the YTMusic type 'trackViewer.exe -r' in a terminal", "album_name": "Greeting", "thumb_url": "https://a.silvergames.com/j/b/nyan-cat.jpg"})";
-    }*/
+    void sendGreeting() {
+        this->m_request = R"({"artist": "By Karlenko",
+                              "track_name": "To see the current track on the YTMusic type 'trackViewer.exe -r' in a terminal",
+                              "album_name": "Greeting",
+                              "thumb_url": "https://srv2.imgonline.com.ua/result_img/imgonline-com-ua-Resize-n1D0sHeBaGK.jpg"})";
+    }
 
 private:
     String m_request = "";
-//    bool m_isFirstInvoke = true;
+    bool m_isFirstInvoke = true;
 };
